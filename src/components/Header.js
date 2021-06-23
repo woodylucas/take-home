@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import PinterestIcon from "@material-ui/icons/Pinterest";
 import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import TextsmsIcon from "@material-ui/icons/Textsms";
+import FaceIcon from "@material-ui/icons/Face";
 
 function Header() {
   return (
@@ -18,10 +22,28 @@ function Header() {
         <FollowingButton>
           <a href="/">Following</a>
         </FollowingButton>
-        {/* <SearchWrapper>
-          <SearchBarWrapper></SearchBarWrapper>
+        <SearchWrapper>
+          <SearchBarWrapper>
+            <IconButton>
+              <SearchIcon />
+            </IconButton>
+            <form>
+              <input type="text" />
+              <button type="submit"></button>
+            </form>
+          </SearchBarWrapper>
         </SearchWrapper>
-        <IconsWrapper></IconsWrapper> */}
+        <IconsWrapper>
+          <IconButton>
+            <NotificationsIcon />
+          </IconButton>
+          <IconButton>
+            <TextsmsIcon />
+          </IconButton>
+          <IconButton>
+            <FaceIcon />
+          </IconButton>
+        </IconsWrapper>
       </Wrapper>
     </div>
   );
@@ -46,7 +68,7 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const HomePageButton = styled.div`
+const HomeButtons = styled.div`
   display: flex;
   height: 48px;
   min-width: 123px;
@@ -54,6 +76,9 @@ const HomePageButton = styled.div`
   justify-content: center;
   border-radius: 24px;
   cursor: pointer;
+`;
+
+const HomePageButton = styled(HomeButtons)`
   background-color: rgb(17, 17, 17);
   a {
     text-decoration: none;
@@ -62,13 +87,7 @@ const HomePageButton = styled.div`
   }
 `;
 
-const FollowingButton = styled.div`
-  display: flex;
-  height: 48px;
-  min-width: 123px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
+const FollowingButton = styled(HomeButtons)`
   cursor: pointer;
   background-color: white;
   a {
@@ -76,4 +95,44 @@ const FollowingButton = styled.div`
     color: black;
     font-weight: 700;
   }
+
+  :hover {
+    background-color: #e1e1e1;
+  }
 `;
+
+const SearchWrapper = styled.div`
+  flex: 1;
+`;
+
+const SearchBarWrapper = styled.div`
+  background-color: #efefef;
+  display: flex;
+  height: 48px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding-left: 10px;
+
+  form {
+    display: flex; 
+    flex: 1
+  }
+  form > input {
+    background-color: transparent; 
+    border: none; 
+    width 100%;
+    margin-left: 5px; 
+    font-size: 16px; 
+  }
+
+  form > button {
+    display: none;
+  }
+
+  input:focus {
+    outline: none
+  }
+`;
+
+const IconsWrapper = styled.div``;
