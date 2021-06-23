@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import data from "../nyc_ttp_pins.json";
 
-function Pin() {
+function Pin({ urls }) {
   return (
     <div>
       <Wrapper>
         <Container>
-          <img
-            src="https://images.unsplash.com/photo-1471306224500-6d0d218be372?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2FuJTIwZnJhbmNpc2NvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-            alt="#"
-          />
+          <img src={urls?.regular} alt="" />
         </Container>
       </Wrapper>
     </div>
@@ -24,7 +22,7 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   display: flex;
-  align-items: center;
+  align-items: center
   box-sizing: border-box;
   cursor: pointer;
   width: 236px;
