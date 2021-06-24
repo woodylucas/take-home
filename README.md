@@ -60,8 +60,7 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Woody Lucas 
-ex. [Woody](https://twitter.com/woodylucas_)
+ [Woody](https://twitter.com/woodylucas_)
 
 ## Version History
 
